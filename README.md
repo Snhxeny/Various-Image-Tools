@@ -1,2 +1,2 @@
 # Various-Image-Tools
-Script-fu scripts for the GNU Image Manipulation Program
+This is a collection of Script-fu image tools that I made and find useful. 
