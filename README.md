@@ -1,5 +1,5 @@
 # Various-Image-Tools
-This is a collection of Script-fu image tools that I made and find useful. 
+This is a collection of Script-fu image tools
 <br />
 <br />
 ![preview](images/paintdemo)
