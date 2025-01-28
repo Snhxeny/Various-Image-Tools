@@ -1,9 +1,9 @@
 (;    
 ;;  Paul Cooney 2021
-;;  Adds a new empty layer with an alpha chanel to all layers
+;;  Adds a layer at 40% oppacity to all open images
  )
 
-(define (sfu-clear-all)
+(define (sfu-clear-40-all)
     (let* ((i (car (gimp-image-list))) (image) (newLayer))
         (while (> i 0)
             (set! image (vector-ref (cadr (gimp-image-list)) (- i 1)))
@@ -11,6 +11,7 @@
             (gimp-image-insert-layer image newLayer 0 0)
             (gimp-layer-resize-to-image-size newLayer)
             (gimp-layer-add-alpha newLayer)
+            (gimp-layer-set-opacity newLayer 40)
             (gimp-drawable-edit-clear newLayer)
             (gimp-displays-flush)
             (set! i (- i 1))
@@ -19,8 +20,8 @@
 )
 
 (script-fu-register
-    "sfu-clear-all"
-    "<Image>/Filters/Other/AddClearLayer-All"
+    "sfu-clear-40-all"
+    "<Image>/Filters/Other/AddClearLayer-40-All"
     "Adds a transparent layer to all open images"
     "Paul"
     "Paul"
